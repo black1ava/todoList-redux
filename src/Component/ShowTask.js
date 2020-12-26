@@ -1,12 +1,27 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { deleteTask, editTask } from './../Action'
 
-function ShowTask(props){
-  const arr = props.tasks
-  const taskList = arr.map(task => <li key={task.id}>
-    {task.task}
+const ShowTask = (props) => {
+  const taskList = props.tasks.map(task =>
+    <li key={task.id}>
+      <p>
+        {task.data}
+      <button 
+        className="Delete"
+        onClick={() => props.deleteTask(task.id)} 
+      >
+        Delete
+      </button>
+      <button 
+        className="Edit"
+        onClick={() => props.editTask(task.id)} 
+      >
+        Edit
+      </button>
+    </p>
   </li>)
-  
+  console.log(props.tasks)
   return(
     <div>
       <ul>
@@ -17,7 +32,12 @@ function ShowTask(props){
 }
 
 const mapStateToProps = state => ({
-  tasks: state.tasks
+  tasks : state.tasks
 })
 
-export default connect(mapStateToProps)(ShowTask)
+const mapDispatchToProps = {
+  deleteTask,
+  editTask
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShowTask)

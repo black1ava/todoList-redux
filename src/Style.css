@@ -1,0 +1,30 @@
+.Confirm{
+  position: absolute;
+  top: 8px;
+  left: 195px
+}
+
+.Cancel{
+  position: absolute;
+  top: 8px;
+  left: 265px
+}
+
+.Edit{
+  position: absolute;
+  right: 10px;
+}
+
+.Delete{
+  position: absolute;
+  right: 50px;
+}
+
+button{
+   line-height: 1.25;
+   background: #FC6E51;
+   color: white;
+   font-size: 16px;
+   border-style: none;
+   border-radius: 10px;
+}

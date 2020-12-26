@@ -1,10 +1,11 @@
 import React from 'react'
-import AddTasks from './Component/AddTasks'
+import AddTask from './Component/AddTask'
 import ShowTask from './Component/ShowTask'
-function App(){
+
+const App = () => {
   return(
     <div>
-      <AddTasks />
+      <AddTask />
       <ShowTask />
     </div>
   )
